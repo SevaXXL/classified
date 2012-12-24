@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="Прием и обработка объявлений" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Объявления #{{ number }}</title>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.2/css/bootstrap.min.css" />
+  <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAABwgIAAKr4wAmeMkAAL//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEDAwAAAAAAAAAAAAAAAAEBAwMDAwMCAAAAAAAAAAADAwMDAwMDBAIAAAAAAAAAAwMDAwMDBAQEAgAAAAAAAAADAwMDAwQEBAQCAAAAAAAAAwMDAgIEBAQEBAIAAAAAAAMCBAQEAgQEBAQEAAAAAAACBAQEBAQCBAQEBAAAAAAAAAIEBAQEBAIEBAQAAAAAAAAAAgQEBAQEAgQEAAAAAAAAAAACBAQEBAQCBP//AAD//wAA//8AAP//AAD//wAA8P8AAPAPAADwBwAA8AMAAPgBAAD4AAAA+AAAAPgAAAD8AAAA/gAAAP8AAAA=" rel="icon" type="image/x-icon" />
+  <style>
+    body {
+      margin-top: 1em;
+    }
+    h1 {
+      margin-top: 0;
+    }
+    textarea {
+      width: 94%;
+      font-size: 1.3em;
+      line-height: 1.2em;
+      font-family: 'Courier New', monospace;
+    }
+    .well .label-block {
+      margin-top: 2em;
+    }
+    .well button {
+      margin-top: 4em;
+    }
+    tr[id^="zone"] {
+      background-color: WhiteSmoke;
+    }
+    #unselectable {
+      -moz-user-select: none;
+      -o-user-select:none;
+      -khtml-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      cursor: pointer;
+    }
+    @media print {
+      #corrector > p {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+<section id="main">
+
+  <div class="row">
+    <div class="span2">
+      <h1>#<span id="current-number">{{ number }}</span></h1>
+    </div>
+    <div class="span5">
+      <ul class="nav nav-pills">
+        <li><a href="#" data-click="correctorShow">Корректору</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Дополнительно<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#" data-click="exportTXT"><i class="icon-share"></i> Экспорт для верстки</a></li>
+            <li><a href="#" data-click="backup"><i class="icon-download-alt"></i> Сохранить резервную копию</a></li>
+            <li><a href="#" data-click="nextNumber"><i class="icon-forward"></i> Назначить следующий номер</a></li>
+            <li class="divider"></li>
+            <li><a href="#" data-click="deleteOldAdv"><i class="icon-trash"></i> Удалить старые объявления</a></li>
+          </ul>
+        </li>
+        <li><a href="https://docs.google.com/document/pub?id=1_q1Vt7qK_LZoctqELMRray5hodFOtfUPJCJOgexBR7k">Справка</a></li>
+      </ul>
+    </div>
+    <div class="span5">
+      <div class="pull-right">
+        {{ user }}
+        <a class="btn btn-warning" href="{{ logout }}"><i class="icon-off icon-white"></i> Выход</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="well">
+    <div id="top-form" class="row">
+      <div class="span9">
+        <textarea rows="5" name="content"></textarea>
+      </div>
+      <div class="span2">
+        <select class="span2" name="count">
+          <option value="0">Подач 1</option>
+          <option value="1">Подач 2</option>
+          <option value="2">Подач 3</option>
+          <option value="3">Подач 4</option>
+          <option value="4">Подач 5</option>
+          <option value="5">Подач 6</option>
+          <option value="6">Подач 7</option>
+          <option value="7">Подач 8</option>
+          <option value="8">Подач 9</option>
+          <option value="9">Подач 10</option>
+          <option value="10">Подач 11</option>
+          <option value="11">Подач 12</option>
+          <option value="12">Подач 13</option>
+          <option value="13">Подач 14</option>
+          <option value="14">Подач 15</option>
+          <option value="15">Подач 16</option>
+          <option value="16">Подач 17</option>
+          <option value="17">Подач 18</option>
+          <option value="18">Подач 19</option>
+          <option value="19">Подач 20</option>
+          <option value="20">Подач 21</option>
+          <option value="21">Подач 22</option>
+          <option value="22">Подач 23</option>
+          <option value="23">Подач 24</option>
+          <option value="24">Подач 25</option>
+          <option value="25">Подач 26</option>
+        </select>
+        <div class="label-block">
+          <label class="radio"><input type="radio" name="type" value="normal" /> Не выделять</label>
+          <label class="radio"><input type="radio" name="type" value="bold" /> Жирный</label>
+          <label class="radio"><input type="radio" name="type" value="frame" /> В рамке</label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span9">
+        <select size="11" id="list1">
+          <option value="1">1 Недвижимость</option>
+          <option value="2">2 Оборудование</option>
+          <option value="3">3 Сырье и материалы</option>
+          <option value="4">4 Супермаркет</option>
+          <option value="5">5 Живой мир</option>
+          <option value="6">6 Работа</option>
+          <option value="7">7 Услуги</option>
+          <option value="8">8 Транспорт</option>
+          <option value="9">9 Знакомства</option>
+          <option value="A">А Деловые предложения</option>
+          <option value="B">Б Разное</option>
+        </select>
+        <select size="11" id="list2"></select>
+        <select size="11" id="list3" name="rubrika"></select>
+      </div>
+      <div class="span2">
+        <input type="hidden" name="begin" value="{{ number }}" />
+        <button class="btn btn-primary btn-large">Добавить</button>
+      </div>
+    </div>
+  </div>
+
+  <p class="muted"><small>Всего объявлений: <span id="length"></span></small></p>
+
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th class="span1">Рубрика</th>
+        <th class="span7">Текст объявления</th>
+        <th class="span1">Тип</th>
+        <th class="span1" id="unselectable">Номер</th>
+        <th class="span1">Подач</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+</section>
+
+<section id="corrector" class="hide">
+  <p><button id="link-to-main" class="btn btn-success">Назад</button> Объявления #{{ number }}. Нажмите <strong><em>Ctrl+P</em></strong>, чтобы распечатать корректору...</p>
+  <table class="table table-condensed"></table>
+</section>
+
+</div><!-- end.container -->
+
+<!-- Шаблон для нового и редактируемых объявлений. При клонировании у оригинала сбиваются
+     радио-инпуты, поэтому оригинал должен быть отдельно -->
+
+
+
+<!-- Шаблон выбора рубрики и номера для редактируемых объявлений -->
+<div id="selectRubrika" class="hide">
+  <select class="span5" name="rubrika">
+    <option value="111">1.1.1 Недвижимость / Продам / квартиры</option>
+    <option value="112">1.1.2 Недвижимость / Продам / дома</option>
+    <option value="113">1.1.3 Недвижимость / Продам / дачи, участки</option>
+    <option value="121">1.2.1 Недвижимость / Куплю / квартиры</option>
+    <option value="122">1.2.2 Недвижимость / Куплю / дома</option>
+    <option value="123">1.2.3 Недвижимость / Куплю / дачи, участки</option>
+    <option value="131">1.3.1 Недвижимость / Аренда / сдам</option>
+    <option value="132">1.3.2 Недвижимость / Аренда / сниму</option>
+    <option value="141">1.4.1 Недвижимость / Обмен / местный</option>
+    <option value="142">1.4.2 Недвижимость / Обмен / междугородный</option>
+    <option value="150">1.5 Недвижимость / Деловая недвижимость</option>
+    <option value="210">2.1 Оборудование / Продам</option>
+    <option value="220">2.2 Оборудование / Куплю</option>
+    <option value="310">3.1 Сырье и материалы / Продам</option>
+    <option value="320">3.2 Сырье и материалы / Куплю</option>
+    <option value="411">4.1.1 Супермаркет / Продам / мебель</option>
+    <option value="412">4.1.2 Супермаркет / Продам / техника</option>
+    <option value="413">4.1.3 Супермаркет / Продам / одежда, ткани</option>
+    <option value="414">4.1.4 Супермаркет / Продам / книги</option>
+    <option value="415">4.1.5 Супермаркет / Продам / продукты питания</option>
+    <option value="416">4.1.6 Супермаркет / Продам / спорттовары</option>
+    <option value="417">4.1.7 Супермаркет / Продам / товары для детей</option>
+    <option value="418">4.1.8 Супермаркет / Продам / муз. инструменты</option>
+    <option value="419">4.1.9 Супермаркет / Продам / другое</option>
+    <option value="421">4.2.1 Супермаркет / Куплю / мебель</option>
+    <option value="422">4.2.2 Супермаркет / Куплю / техника</option>
+    <option value="423">4.2.3 Супермаркет / Куплю / одежда, ткани</option>
+    <option value="424">4.2.4 Супермаркет / Куплю / книги</option>
+    <option value="425">4.2.5 Супермаркет / Куплю / продукты питания</option>
+    <option value="426">4.2.6 Супермаркет / Куплю / спорттовары</option>
+    <option value="427">4.2.7 Супермаркет / Куплю / товары для детей</option>
+    <option value="428">4.2.8 Супермаркет / Куплю / муз. инструменты</option>
+    <option value="429">4.2.9 Супермаркет / Куплю / другое</option>
+    <option value="510">5.1 Живой мир / Предложение</option>
+    <option value="520">5.2 Живой мир / Спрос</option>
+    <option value="610">6.1 Работа / Требуются</option>
+    <option value="620">6.2 Работа / Ищу</option>
+    <option value="711">7.1.1 Услуги / Предложение / ремонт и строительство</option>
+    <option value="712">7.1.2 Услуги / Предложение / медицина</option>
+    <option value="713">7.1.3 Услуги / Предложение / образование</option>
+    <option value="714">7.1.4 Услуги / Предложение / отдых и туризм</option>
+    <option value="715">7.1.5 Услуги / Предложение / другое</option>
+    <option value="721">7.2.1 Услуги / Спрос / ремонт и строительство</option>
+    <option value="722">7.2.2 Услуги / Спрос / медицина</option>
+    <option value="723">7.2.3 Услуги / Спрос / образование</option>
+    <option value="724">7.2.4 Услуги / Спрос / отдых и туризм</option>
+    <option value="725">7.2.5 Услуги / Спрос / другое</option>
+    <option value="811">8.1.1 Транспорт / Продам / автомобили</option>
+    <option value="812">8.1.2 Транспорт / Продам / запчасти</option>
+    <option value="813">8.1.3 Транспорт / Продам / гаражи</option>
+    <option value="814">8.1.4 Транспорт / Продам / катера и яхты</option>
+    <option value="815">8.1.5 Транспорт / Продам / с/х техника</option>
+    <option value="816">8.1.6 Транспорт / Продам / другое</option>
+    <option value="821">8.2.1 Транспорт / Куплю / автомобили</option>
+    <option value="822">8.2.2 Транспорт / Куплю / запчасти</option>
+    <option value="823">8.2.3 Транспорт / Куплю / гаражи</option>
+    <option value="824">8.2.4 Транспорт / Куплю / катера и яхты</option>
+    <option value="825">8.2.5 Транспорт / Куплю / с/х техника</option>
+    <option value="826">8.2.6 Транспорт / Куплю / другое</option>
+    <option value="910">9.1 Знакомства / Помощь в знакомстве</option>
+    <option value="920">9.2 Знакомства / Мужчины</option>
+    <option value="930">9.3 Знакомства / Женщины</option>
+    <option value="A00">А Деловые предложения</option>
+    <option value="B00">Б Разное</option>
+  </select>
+  <small>В номер</small> <input type="text" class="span1" name="begin" value="" />
+</div>
+
+<!-- Для отправки второстепенных форм -->
+<div id="hide" class="hide"></div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="//code.jquery.com/color/jquery.color.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.2/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/json2/20121008/json2.min.js"></script>
+<script src="/scripts/script.js"></script>
+
+<script>
+$(document).ready(function() {
+  adv.curentNumber = adv.getCurentNumber('#current-number');
+  adv.setupForm();
+  adv.setupMain();
+});
+</script>
+
+</body>
+</html>
