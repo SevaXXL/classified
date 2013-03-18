@@ -28,7 +28,7 @@
       margin-top: 4em;
     }
     tr[id^="zone"] {
-      background-color: WhiteSmoke;
+      background-color: whiteSmoke;
     }
     #unselectable {
       -moz-user-select: none;
@@ -43,135 +43,144 @@
       #corrector > p {
         display: none;
       }
+      p {
+        font-size: 13pt;
+        line-height: 15pt;
+        text-indent: -25pt;
+        padding-left: 25pt;
+      }
+      span {
+        font-size: 9pt;
+        line-height: 15pt;
+      }
     }
   </style>
 </head>
 
 <body>
 <div class="container">
-<section id="main">
 
-  <div class="row">
-    <div class="span2">
-      <h1>#<span id="current-number">{{ number }}</span></h1>
-    </div>
-    <div class="span5">
-      <ul class="nav nav-pills">
-        <li><a href="#" data-click="correctorShow">Корректору</a></li>
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Дополнительно<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#" data-click="exportTXT"><i class="icon-share"></i> Экспорт для верстки</a></li>
-            <li><a href="#" data-click="backup"><i class="icon-download-alt"></i> Сохранить резервную копию</a></li>
-            <li><a href="#" data-click="nextNumber"><i class="icon-forward"></i> Назначить следующий номер</a></li>
-            <li class="divider"></li>
-            <li><a href="#" data-click="deleteOldAdv"><i class="icon-trash"></i> Удалить старые объявления</a></li>
-          </ul>
-        </li>
-        <li><a href="https://docs.google.com/document/pub?id=1_q1Vt7qK_LZoctqELMRray5hodFOtfUPJCJOgexBR7k">Справка</a></li>
-      </ul>
-    </div>
-    <div class="span5">
-      <div class="pull-right">
-        {{ user }}
-        <a class="btn btn-warning" href="{{ logout }}"><i class="icon-off icon-white"></i> Выход</a>
-      </div>
-    </div>
-  </div>
+  <section id="main">
 
-  <div class="well">
-    <div id="top-form" class="row">
-      <div class="span9">
-        <textarea rows="5" name="content"></textarea>
-      </div>
+    <div class="row">
       <div class="span2">
-        <select class="span2" name="count">
-          <option value="0">Подач 1</option>
-          <option value="1">Подач 2</option>
-          <option value="2">Подач 3</option>
-          <option value="3">Подач 4</option>
-          <option value="4">Подач 5</option>
-          <option value="5">Подач 6</option>
-          <option value="6">Подач 7</option>
-          <option value="7">Подач 8</option>
-          <option value="8">Подач 9</option>
-          <option value="9">Подач 10</option>
-          <option value="10">Подач 11</option>
-          <option value="11">Подач 12</option>
-          <option value="12">Подач 13</option>
-          <option value="13">Подач 14</option>
-          <option value="14">Подач 15</option>
-          <option value="15">Подач 16</option>
-          <option value="16">Подач 17</option>
-          <option value="17">Подач 18</option>
-          <option value="18">Подач 19</option>
-          <option value="19">Подач 20</option>
-          <option value="20">Подач 21</option>
-          <option value="21">Подач 22</option>
-          <option value="22">Подач 23</option>
-          <option value="23">Подач 24</option>
-          <option value="24">Подач 25</option>
-          <option value="25">Подач 26</option>
-        </select>
-        <div class="label-block">
-          <label class="radio"><input type="radio" name="type" value="normal" /> Не выделять</label>
-          <label class="radio"><input type="radio" name="type" value="bold" /> Жирный</label>
-          <label class="radio"><input type="radio" name="type" value="frame" /> В рамке</label>
+        <h1>#<span id="current-number">{{ number }}</span></h1>
+      </div>
+      <div class="span5">
+        <ul class="nav nav-pills">
+          <li><a href="#" data-click="statistica">Статистика</a></li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Дополнительно<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#" data-click="backup"><i class="icon-download-alt"></i> Сохранить резервную копию</a></li>
+              <li><a href="#" data-click="correctorShow"><i class="icon-pencil"></i> Корректору</a></li>
+              <li><a href="#" data-click="exportTXT"><i class="icon-share"></i> Экспорт для верстки</a></li>
+              <li><a href="#" data-click="nextNumber"><i class="icon-forward"></i> Назначить следующий номер</a></li>
+              <li class="divider"></li>
+              <li><a href="#" data-click="deleteOldAdv"><i class="icon-trash"></i> Удалить старые объявления</a></li>
+            </ul>
+          </li>
+          <li><a href="https://docs.google.com/document/pub?id=1_q1Vt7qK_LZoctqELMRray5hodFOtfUPJCJOgexBR7k">Справка</a></li>
+        </ul>
+      </div>
+      <div class="span5">
+        <div class="pull-right">
+          {{ user }}
+          <a class="btn btn-warning" href="{{ logout }}"><i class="icon-off icon-white"></i> Выход</a>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="span9">
-        <select size="11" id="list1">
-          <option value="1">1 Недвижимость</option>
-          <option value="2">2 Оборудование</option>
-          <option value="3">3 Сырье и материалы</option>
-          <option value="4">4 Супермаркет</option>
-          <option value="5">5 Живой мир</option>
-          <option value="6">6 Работа</option>
-          <option value="7">7 Услуги</option>
-          <option value="8">8 Транспорт</option>
-          <option value="9">9 Знакомства</option>
-          <option value="A">А Деловые предложения</option>
-          <option value="B">Б Разное</option>
-        </select>
-        <select size="11" id="list2"></select>
-        <select size="11" id="list3" name="rubrika"></select>
+
+    <div class="well">
+      <div id="top-form" class="row">
+        <div class="span9">
+          <textarea rows="6" name="content"></textarea>
+        </div>
+        <div class="span2">
+          <select class="span2" name="count">
+            <option value="0">Подач 1</option>
+            <option value="1">Подач 2</option>
+            <option value="2">Подач 3</option>
+            <option value="3">Подач 4</option>
+            <option value="4">Подач 5</option>
+            <option value="5">Подач 6</option>
+            <option value="6">Подач 7</option>
+            <option value="7">Подач 8</option>
+            <option value="8">Подач 9</option>
+            <option value="9">Подач 10</option>
+            <option value="10">Подач 11</option>
+            <option value="11">Подач 12</option>
+            <option value="12">Подач 13</option>
+            <option value="13">Подач 14</option>
+            <option value="14">Подач 15</option>
+            <option value="15">Подач 16</option>
+            <option value="16">Подач 17</option>
+            <option value="17">Подач 18</option>
+            <option value="18">Подач 19</option>
+            <option value="19">Подач 20</option>
+            <option value="20">Подач 21</option>
+            <option value="21">Подач 22</option>
+            <option value="22">Подач 23</option>
+            <option value="23">Подач 24</option>
+            <option value="24">Подач 25</option>
+            <option value="25">Подач 26</option>
+          </select>
+          <div class="label-block">
+            <form>
+              <label class="radio"><input type="radio" name="type" value="normal" /> Не выделять</label>
+              <label class="radio"><input type="radio" name="type" value="bold" /> Жирный</label>
+              <label class="radio"><input type="radio" name="type" value="frame" /> В рамке</label>
+            </form>
+          </div>
+        </div>
       </div>
-      <div class="span2">
-        <input type="hidden" name="begin" value="{{ number }}" />
-        <button class="btn btn-primary btn-large">Добавить</button>
+      <div class="row">
+        <div class="span9">
+          <select size="11" id="list1">
+            <option value="1">1 Недвижимость</option>
+            <option value="2">2 Оборудование</option>
+            <option value="3">3 Сырье и материалы</option>
+            <option value="4">4 Супермаркет</option>
+            <option value="5">5 Живой мир</option>
+            <option value="6">6 Работа</option>
+            <option value="7">7 Услуги</option>
+            <option value="8">8 Транспорт</option>
+            <option value="9">9 Знакомства</option>
+            <option value="A">А Деловые предложения</option>
+            <option value="B">Б Разное</option>
+          </select>
+          <select size="11" id="list2"></select>
+          <select size="11" id="list3" name="rubrika"></select>
+        </div>
+        <div class="span2">
+          <input type="hidden" name="begin" value="{{ number }}" />
+          <button class="btn btn-primary btn-large">Добавить</button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <p class="muted"><small>Всего объявлений: <span id="length"></span></small></p>
+    <p class="muted"><small>Всего объявлений: <span id="length"></span></small></p>
 
-  <table class="table table-condensed">
-    <thead>
-      <tr>
-        <th class="span1">Рубрика</th>
-        <th class="span7">Текст объявления</th>
-        <th class="span1">Тип</th>
-        <th class="span1" id="unselectable">Номер</th>
-        <th class="span1">Подач</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+    <table class="table table-condensed">
+      <thead>
+        <tr>
+          <th class="span1">Рубрика</th>
+          <th class="span7">Текст объявления</th>
+          <th class="span1">Тип</th>
+          <th class="span1" id="unselectable" title="Сортировать">Номер</th>
+          <th class="span1">Подач</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
 
-</section>
+  </section>
 
-<section id="corrector" class="hide">
-  <p><button id="link-to-main" class="btn btn-success">Назад</button> Объявления #{{ number }}. Нажмите <strong><em>Ctrl+P</em></strong>, чтобы распечатать корректору...</p>
-  <table class="table table-condensed"></table>
-</section>
+  <section id="corrector" class="hide">
+    <p><button id="link-to-main" class="btn btn-success"><i class="icon-chevron-left icon-white"></i> Назад</button> Объявления #{{ number }}. Нажмите <strong><em>Ctrl+P</em></strong>, чтобы распечатать корректору...</p>
+    <div></div>
+  </section>
 
 </div><!-- end.container -->
-
-<!-- Шаблон для нового и редактируемых объявлений. При клонировании у оригинала сбиваются
-     радио-инпуты, поэтому оригинал должен быть отдельно -->
-
-
 
 <!-- Шаблон выбора рубрики и номера для редактируемых объявлений -->
 <div id="selectRubrika" class="hide">
@@ -251,7 +260,7 @@
 <script src="//code.jquery.com/color/jquery.color.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.2/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/json2/20121008/json2.min.js"></script>
-<script src="/scripts/script.js"></script>
+<script src="scripts/script.js"></script>
 
 <script>
 $(document).ready(function() {
